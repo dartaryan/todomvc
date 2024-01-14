@@ -1,7 +1,9 @@
 <section class="main">
     <ul class="todo-list">
         <todomvc-todo *ngFor="let todo of visibleTodos()"
-                      [todo]="todo">
+                      [todo]="todo"
+                      [isEditing]="editingId === todo.id"
+                      (setEditingId)="setEditingId($event)">
         </todomvc-todo>
     </ul>
 </section>
