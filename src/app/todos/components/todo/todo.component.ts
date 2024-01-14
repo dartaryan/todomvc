@@ -1,4 +1,16 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, inject, Input, OnInit, Output} from '@angular/core';
+import {
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    EventEmitter,
+    inject,
+    Input,
+    OnChanges,
+    OnInit,
+    Output,
+    SimpleChanges,
+    ViewChild
+} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {TodoInterface} from '../../types/todo.interface';
 import {TodosService} from '../../services/todos.service';
@@ -11,12 +23,25 @@ import {TodosService} from '../../services/todos.service';
     styleUrl: './todo.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TodoComponent implements OnInit {
+export class TodoComponent implements OnInit, OnChanges {
     @Input({required: true}) todo!: TodoInterface;
     @Input({required: true}) isEditing!: boolean;
     @Output() setEditingId: EventEmitter<string | null> = new EventEmitter();
     editingText: string = '';
     todosService = inject(TodosService);
+    @ViewChild('textInput') textInput?: ElementRef;
+
+    ngOnInit(): void {
+        this.editingText = this.todo.text;
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        if (changes['isEditing'].currentValue) {
+            setTimeout(() => {
+                this.textInput?.nativeElement.focus();
+            }, 0);
+        }
+    }
 
     changeText(event: Event): void {
         this.editingText = (event.target as HTMLInputElement).value;
@@ -32,15 +57,12 @@ export class TodoComponent implements OnInit {
         this.setEditingId.emit(this.todo.id);
     }
 
-    ngOnInit(): void {
-        this.editingText = this.todo.text;
-    }
 
     removeTodo(): void {
         this.todosService.removeTodo(this.todo.id);
     }
 
-    toggleTodo(): void{
-        this.todosService.toggleTodo(this.todo.id)
+    toggleTodo(): void {
+        this.todosService.toggleTodo(this.todo.id);
     }
 }
