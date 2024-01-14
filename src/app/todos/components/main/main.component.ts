@@ -1,12 +1,13 @@
-import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { TodosService } from '../../services/todos.service';
-import { FilterEnum } from '../../types/filter.enum';
+import {ChangeDetectionStrategy, Component, computed, inject} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {TodosService} from '../../services/todos.service';
+import {FilterEnum} from '../../types/filter.enum';
+import {TodoComponent} from "../todo/todo.component";
 
 @Component({
     selector: 'todomvc-main',
     standalone: true,
-    imports: [CommonModule],
+    imports: [CommonModule, TodoComponent],
     templateUrl: './main.component.html',
     styleUrl: './main.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,

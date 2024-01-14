@@ -1,5 +1,7 @@
 <section class="main">
     <ul class="todo-list">
-        <div *ngFor="let todo of visibleTodos()">{{ todo.text }}</div>
+        <todomvc-todo *ngFor="let todo of visibleTodos()"
+                      [todo]="todo">
+        </todomvc-todo>
     </ul>
 </section>
