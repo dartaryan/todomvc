@@ -21,18 +21,22 @@ export class TodosService {
     }
 
     changeTodo(id: string, text: string): void {
-        this.todosSig.update(todos =>
-            todos.map(todo => todo.id === id ? {...todo, text} : todo));
+        this.todosSig.update(todos => todos.map(todo => todo.id === id ? {...todo, text} : todo));
     }
 
     removeTodo(id: string): void {
-        this.todosSig.update(todos =>
-            todos.filter(todo => todo.id !== id));
+        this.todosSig.update(todos => todos.filter(todo => todo.id !== id));
     }
 
     toggleTodo(id: string): void {
-        this.todosSig.update(todos =>
-            todos.map(todo => todo.id === id ? {...todo, isCompleted: !todo.isCompleted} : todo));
+        this.todosSig.update(todos => todos.map(todo => todo.id === id ? {
+            ...todo,
+            isCompleted: !todo.isCompleted
+        } : todo));
     }
 
+    toggleAll(isCompleted: boolean): void {
+        this.todosSig.update(todos =>
+            todos.map(todo => ({...todo, isCompleted: !todo.isCompleted})));
+    }
 }
