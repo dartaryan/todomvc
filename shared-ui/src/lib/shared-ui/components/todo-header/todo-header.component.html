@@ -1,0 +1,10 @@
+<div class="header">
+    <h1>{{ headerTitle }}</h1>
+    <nav>
+        <ul>
+            <li *ngFor="let link of navigationLinks">
+                <a [href]="link.url">{{ link.title }}</a>
+            </li>
+        </ul>
+    </nav>
+</div>

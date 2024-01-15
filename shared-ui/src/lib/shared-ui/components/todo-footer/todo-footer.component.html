@@ -1,0 +1,8 @@
+<div class="footer">
+    <div class="footer-links">
+        <a *ngFor="let link of footerLinks" [href]="link.url">{{ link.title }}</a>
+    </div>
+    <div class="company-info">
+        <p>{{ companyInfo }}</p>
+    </div>
+</div>

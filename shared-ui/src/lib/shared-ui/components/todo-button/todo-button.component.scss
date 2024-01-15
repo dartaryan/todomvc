@@ -1,0 +1,27 @@
+button {
+  padding: 10px 20px;
+  border: 2px solid #e10514;
+  background-color: white;
+  color: #e10514;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #e10514;
+  color: white;
+}
+
+button:active {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+button.selectable {
+  border-style: dashed;
+}
+
+button.selected {
+  background-color: #e10514;
+  color: white;
+  border-style: solid;
+}

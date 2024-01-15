@@ -1,0 +1,9 @@
+<div class="card" *ngIf="planDetails">
+    <h3>{{ planDetails.title }}</h3>
+    <p>{{ planDetails.description }}</p>
+    <p class="price">Price: ${{ planDetails.price }}</p>
+</div>
+<div class="offer-card" *ngIf="offerDetails">
+    <h4>{{ offerDetails.offerTitle }}</h4>
+    <p>{{ offerDetails.offerInfo }}</p>
+</div>

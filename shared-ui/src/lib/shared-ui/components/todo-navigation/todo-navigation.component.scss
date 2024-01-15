@@ -1,0 +1,19 @@
+.navigation ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navigation ul li {
+  margin: 0 10px;
+}
+
+.navigation ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.navigation ul li a.active, .navigation ul li a:hover {
+  color: #e10514;
+}

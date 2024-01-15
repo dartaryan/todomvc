@@ -1,0 +1,21 @@
+.input-container {
+  margin-bottom: 15px;
+}
+
+.input-container label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+}
+
+.input-container input:focus {
+  outline: none;
+  border-color: #e10514;
+}

@@ -1,0 +1,7 @@
+<nav class="navigation">
+    <ul>
+        <li *ngFor="let link of navLinks">
+            <a [href]="link.url" [class.active]="link.title === activeLink">{{ link.title }}</a>
+        </li>
+    </ul>
+</nav>
