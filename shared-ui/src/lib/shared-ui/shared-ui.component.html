@@ -1,1 +1,29 @@
-<p>shared-ui works!</p>
+<todomvc-todo-header [headerTitle]="headerData.headerTitle"
+            [navigationLinks]="headerData.navigationLinks">
+</todomvc-todo-header>
+
+<todomvc-todo-card [planDetails]="cardData.planDetails"></todomvc-todo-card>
+
+<div class="buttons">
+    <todomvc-todo-button *ngFor="let button of buttonsData"
+                [buttonText]="button.text"
+                [selectable]="button.selectable"
+                [selected]="button.selected">
+    </todomvc-todo-button>
+</div>
+
+<todomvc-todo-input label="Your Destination" placeholder="Enter destination" type="text"></todomvc-todo-input>
+
+<todomvc-todo-tab [tabs]="tabData.tabs"></todomvc-todo-tab>
+
+<todomvc-todo-info-section [sectionTitle]="infoSectionData.title"
+                  [infoContent]="infoSectionData.content">
+</todomvc-todo-info-section>
+
+<todomvc-todo-navigation [navLinks]="headerData.navigationLinks"
+                [activeLink]="headerData.navigationLinks[0].title">
+</todomvc-todo-navigation>
+
+<todomvc-todo-footer [footerLinks]="footerData.footerLinks"
+            [companyInfo]="footerData.companyInfo">
+</todomvc-todo-footer>
