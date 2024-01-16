@@ -23,8 +23,8 @@ button {
 body {
   font: 14px Roboto;
   line-height: 1.4em;
-  background: #e4f0f6;
-  color: #205375;
+  background: #323d3f;
+  color: #0f2e3f;
   min-width: 230px;
   max-width: 550px;
   margin: 0 auto;
@@ -293,6 +293,9 @@ body {
   position: absolute;
   right: 0;
   left: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .filters li {
@@ -327,7 +330,7 @@ html .clear-completed:active {
 
 .clear-completed:hover {
   text-decoration: underline;
-    color: #3e5c76;
+  color: #3e5c76;
 }
 
 .info {
@@ -374,6 +377,9 @@ html .clear-completed:active {
 
   .filters {
     bottom: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 3px;
   }
 }
 
@@ -471,7 +477,7 @@ hr {
   right: 0;
 }
 
-.quote footer img {
+.quote footer {
   border-radius: 3px;
 }
 

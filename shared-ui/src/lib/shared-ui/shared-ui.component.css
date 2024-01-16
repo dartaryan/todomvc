@@ -3,3 +3,8 @@
     justify-content: space-around;
     margin-bottom: 20px;
 }
+
+.cards {
+    display: flex;
+    margin-bottom: 20px;
+}

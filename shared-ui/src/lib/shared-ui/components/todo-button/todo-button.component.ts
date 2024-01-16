@@ -1,5 +1,6 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
+import {booleanAttribute, ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {Event} from '@angular/router';
 
 @Component({
     selector: 'todomvc-todo-button',
@@ -12,13 +13,15 @@ import {CommonModule} from '@angular/common';
 export class TodoButtonComponent {
     @Input() buttonText: string = 'Button';
     @Input() selectable: boolean = false;
-    @Input() selected: boolean = false;
-    @Output() buttonClick = new EventEmitter<void>();
+    @Input({transform: booleanAttribute}) selected: boolean = false;
+    @Output() buttonClick = new EventEmitter<Event>();
 
     onClick(): void {
+
         if (this.selectable) {
             this.selected = !this.selected;
         }
+        console.log("cl");
         this.buttonClick.emit();
     }
 }

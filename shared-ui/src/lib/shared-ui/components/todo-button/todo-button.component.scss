@@ -1,10 +1,11 @@
 button {
-  padding: 10px 20px;
+  padding: 2px 5px;
   border: 2px solid #e10514;
   background-color: white;
   color: #e10514;
   cursor: pointer;
   transition: all 0.3s ease;
+  border-radius: 5px;
 }
 
 button:hover {

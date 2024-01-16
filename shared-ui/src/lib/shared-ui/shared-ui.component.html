@@ -1,14 +1,20 @@
 <todomvc-todo-header [headerTitle]="headerData.headerTitle"
-            [navigationLinks]="headerData.navigationLinks">
+                     [navigationLinks]="headerData.navigationLinks">
+
 </todomvc-todo-header>
 
-<todomvc-todo-card [planDetails]="cardData.planDetails"></todomvc-todo-card>
+<div class="cards">
+    <todomvc-todo-card [planDetails]="cardsData.familyPlan"></todomvc-todo-card>
+    <todomvc-todo-card [planDetails]="cardsData.couplePlan"></todomvc-todo-card>
+    <todomvc-todo-card [planDetails]="cardsData.soloTraveler"></todomvc-todo-card>
+    <todomvc-todo-card [planDetails]="cardsData.adventurePlan"></todomvc-todo-card>
+</div>
 
 <div class="buttons">
     <todomvc-todo-button *ngFor="let button of buttonsData"
-                [buttonText]="button.text"
-                [selectable]="button.selectable"
-                [selected]="button.selected">
+                         [buttonText]="button.text"
+                         [selectable]="button.selectable"
+                         [selected]="button.selected">
     </todomvc-todo-button>
 </div>
 
@@ -17,13 +23,13 @@
 <todomvc-todo-tab [tabs]="tabData.tabs"></todomvc-todo-tab>
 
 <todomvc-todo-info-section [sectionTitle]="infoSectionData.title"
-                  [infoContent]="infoSectionData.content">
+                           [infoContent]="infoSectionData.content">
 </todomvc-todo-info-section>
 
 <todomvc-todo-navigation [navLinks]="headerData.navigationLinks"
-                [activeLink]="headerData.navigationLinks[0].title">
+                         [activeLink]="headerData.navigationLinks[0].title">
 </todomvc-todo-navigation>
 
 <todomvc-todo-footer [footerLinks]="footerData.footerLinks"
-            [companyInfo]="footerData.companyInfo">
+                     [companyInfo]="footerData.companyInfo">
 </todomvc-todo-footer>
